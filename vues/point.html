@@ -27,17 +27,17 @@
         <div class="noprint">
           <p class="lien_ajout_commentaire"><b>Vous êtes modérateur de cette fiche, vous pouvez :
             <a href="<?=$config_wri['sous_dossier_installation']?>point_formulaire_modification?id_point=<?=$vue->point->id_point?>">
-              Modifier cette fiche
+              <?=_('Modifier cette fiche')?>
             </a>&nbsp;
             <a href="<?=$config_wri['sous_dossier_installation']?>gestion/historique_modifications/<?=$vue->point->id_point?>">
-              Consulter l'historique de cette fiche
+              <?=_('Consulter l\'historique de cette fiche')?>
             </a>
           </b></p>
         </div>
       <?php }?>
 <!--========================================== FICHE DE ===========================================-->
       <dt class="condense">
-        Fiche (n°<?=$vue->point->id_point?>) de:
+        <?=_('Fiche')?> (n°<?=$vue->point->id_point?>) de:
       </dt>
       <dd class="condense">
         <em><?=$vue->nom_debut_majuscule?></em>, 
@@ -57,11 +57,11 @@
     if (!empty($vue->mini_carte)) {?>
       <div id="container-carte-point">
         <div id="carte-point"></div>
-        <div class="noprint">Ctrl+click: nouvel onglet</div>
-        <div class="noprint">Maj+click: nouvelle fenêtre</div>
+        <div class="noprint"><?=_('Ctrl+click: nouvel onglet')?></div>
+        <div class="noprint"><?=_('Maj+click: nouvelle fenêtre')?></div>
         <div class="noprint">
           <a href="<?=$config_wri['sous_dossier_installation']?>nav" title="'Shfit + Click gauche' pour ouvrir la carte dans une nouvelle fenêtre">
-            Agrandir la carte
+            <?=_('Agrandir la carte')?>
           </a>
         </div>
       </div>
@@ -69,9 +69,9 @@
     <div>
     <dl style="margin: 2px;">
 <!--========================================= COORDONNÉES =========================================-->
-      <dt>Coordonnées:</dt>
+      <dt><?=_('Coordonnées')?>:</dt>
         <dd>
-          Provenance:
+          <?=_('Provenance')?>:
           <?php if ($vue->point->id_type_precision_gps == $config_wri['id_coordonees_gps_approximative']) {?>
             <strong><?=$vue->point->nom_precision_gps?></strong>
           <?php }else{ ?>
@@ -79,7 +79,7 @@
           <?php }?>
         </dd>
       <dd>
-        Altitude: <em><?=$vue->point->altitude?>m,</em>
+        <?=_('Altitude')?>: <em><?=$vue->point->altitude?>m,</em>
         <?php if (empty($vue->mini_carte)) {?>
           <strong><?=$vue->point->nom_precision_gps?></strong>
         <?php }else{?>
